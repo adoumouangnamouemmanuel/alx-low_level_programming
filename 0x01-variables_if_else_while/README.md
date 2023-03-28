@@ -1,4 +1,4 @@
-General
+##General
 
 What are the arithmetic operators and how to use them
 What are the logical operators (sometimes called boolean operators) and how to use them
@@ -16,7 +16,7 @@ How to print variables using printf
 What is the ASCII character set
 What are the purpose of the gcc flags -m32 and -m64
 
-Requirement
+##Requirement
 
 Allowed editors: vi, vim, emacs
 All your files will be compiled on Ubuntu 14.04 LTS
