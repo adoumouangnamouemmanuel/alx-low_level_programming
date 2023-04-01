@@ -1,55 +1,53 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * infinite_add - adds two numbers
- * @n1: number one argument for *infinite_add
- * @n2: number two argument for *infinite_add
- * @r: buffer that the function will use to store the result
- *    argument for *infinite_add
- * @size_r: buffer size argument for *infinite_add
- * Return: the pointer to dest
+ * infinite_add -  adds two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: result
+ * @size_r: result lenght
+ * Return: sum
+ *
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
-{
-	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
 
-	while (*(n1 + c1) != '\0')
-		c1++;
-	while (*(n2 + c2) != '\0')
-		c2++;
-	if (c1 >= c2)
-		bg = c1;
+{
+/* local variable declaration */
+	int i = 0, j = 0, k, l = 0, f, s, d = 0;
+
+	while (n1[i] != '\0')
+		i++;
+	while (n2[j] != '\0')
+		j++;
+	if (i > j)
+		l = i;
 	else
-		bg = c2;
-	if (size_r <= bg + 1)
+		l = j;
+	if (l + 1 > size_r)
 		return (0);
-	r[bg + 1] = '\0';
-	c1--, c2--, size_r--;
-	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
-	while (bg >= 0)
+	r[l] = '\0';
+	for (k = l - 1 ; k >= 0 ; k--)
 	{
-		op = dr1 + dr2 + add;
-		if (op >= 10)
-			add = op / 10;
+		i--;
+		j--;
+		if (i >= 0)
+			f = n1[i] - '0';
 		else
-			add = 0;
-		if (op > 0)
-			*(r + bg) = (op % 10) + 48;
+			f = 0;
+		if (j >= 0)
+			s = n2[j] - '0';
 		else
-			*(r + bg) = '0';
-		if (c1 > 0)
-			c1--, dr1 = *(n1 + c1) - 48;
-		else
-			dr1 = 0;
-		if (c2 > 0)
-			c2--, dr2 = *(n2 + c2) - 48;
-		else
-			dr2 = 0;
-		bg--, size_r--;
+			s = 0;
+		r[k] = (f + s + d) % 10 + '0';
+		d = (f + s + d) / 10;
 	}
-	if (*(r) == '0')
-		return (r + 1);
-	else
-		return (r);
+	if (d == 1)
+	{
+		r[l + 1] = '\0';
+		if (l + 2 > size_r)
+			return (0);
+		while (l-- >= 0)
+			r[l + 1] = r[l];
+		r[0] = d + '0';
+	}
+	return (r);
 }
