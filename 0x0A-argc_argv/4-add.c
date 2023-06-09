@@ -14,6 +14,11 @@ int main(int argc, char *argv[])
 {
 	int num, digit, sum = 0;
 
+	if (argc < 3)
+	{
+		printf("Error\n");
+	}
+
 	for (num = 1; num < argc; num++)
 	{
 		for (digit = 0; argv[num][digit]; digit++)
