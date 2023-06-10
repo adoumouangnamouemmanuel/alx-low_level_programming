@@ -4,5 +4,5 @@
 <p>This project is the first C project as part of the alx_africa curriculum, and covers the very basics of compilation and C.</p>
 <h2>0. Write a script that runs a C file through the preprocessor and save the result into another file.</h2>
 <ul> <li>File> 0-preprocessor: is a script that runs a C file through the preprocessor and save the result into another file.</li></ul>
-<h3>input: <span style="background-color: #666">gcc -E $CFILE -o c</span></h3>
+<h3>input: <span style="background-color: #666;">gcc -E $CFILE -o c</span></h3>
 <h2>1. Write a script that compiles a C file but does not link.</h2>
