@@ -5,6 +5,6 @@
 <li><h3>0. Positive anything is better than negative nothing</h3></li>
 <ul>
 <p>0-positive_or_negative.c: C program that prints whether a randomly generated number is positive or negative, followed by a new line:</p>
-<li>Completion of [this source code](https://github.com/alx-tools/0x01.c/blob/master/0-positive_or_negative_c)</li>
+<li>Completion of <a href="https://github.com/alx-tools/0x01.c/blob/master/0-positive_or_negative_c">this source code.</li>
 </ul>
 </ul>
