@@ -10,35 +10,34 @@
  */
 int **alloc_grid(int width, int height)
 {
+	int **gridout;
 	int i, j;
-	int tabout;
 
-	if (width <= 0 || height <= 0)
+	if (width < 1 || height < 1)
 		return (NULL);
-	tabout = malloc(height * sizeof(int *));
-	if (tabout == NULL)
+
+	gridout = malloc(height * sizeof(int *));
+	if (gridout == NULL)
 	{
-		free(tabout);
+		free(gridout);
 		return (NULL);
 	}
 
 	for (i = 0; i < height; i++)
 	{
-		tabout[i] = malloc(sizeof(int) * width);
-		if (tabout[i] == NULL)
+		gridout[i] = malloc(width * sizeof(int));
+		if (gridout[i] == NULL)
 		{
 			for (i--; i >= 0; i--)
-				free(tabout[i]);
-			free(tabout);
-		}
-	}
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < width; j++)
-		{
-			tabout[i][j] = 0;
+				free(gridout[i]);
+			free(gridout);
+			return (NULL);
 		}
 	}
 
-	return (tabout);
+	for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
+			gridout[i][j] = 0;
+
+	return (gridout);
 }
